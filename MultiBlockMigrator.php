@@ -110,14 +110,14 @@ margin-bottom:15px;
 
     echo'
 
-    <form method="post" action="'.$SITEURL.'admin/load.php?id=MultiBlockURLchanger&info" style="padding:10px;background:#fafafa;border-radius:5px;border:solid 1px #ddd">
+    <form method="post" action="'.$SITEURL.'admin/load.php?id=MultiBlockMigrator&info" style="padding:10px;background:#fafafa;border-radius:5px;border:solid 1px #ddd">
         <p style="margin:0;padding:0;margin-top:10px;">old domain adress</p>
-    <input class="inputer" type="text" name="old" placeholder="http://youroldadress.com/" value="">
+    <input class="inputer" required type="text" name="old" placeholder="http://youroldadress.com/" value="">
     <p style="margin:0;padding:0;margin-top:10px;">new domain adress</p>
-    <input class="inputer" type="text" name="new" placeholder="http://yournewadress.com/">
+    <input class="inputer" required type="text" name="new" placeholder="http://yournewadress.com/">
     <br>
     <br>
-    <input type="submit" name="replace" class="button-18" name="submit" value="Replace URL">
+    <input type="submit" name="replace" class="button-18"  value="Replace URL">
     </form>';
 
 
