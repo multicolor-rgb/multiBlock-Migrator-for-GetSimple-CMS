@@ -19,7 +19,7 @@ register_plugin(
  
  
 # add a link in the admin tab 'theme'
-add_action('plugins-sidebar','createSideMenu',array($thisfile,'MultiBlock Migrator 🧱'));
+add_action('plugins-sidebar','createSideMenu',[$thisfile, 'MultiBlock Migrator 🧱']);
  
  
 function MultiBlockURLChanger() {
@@ -141,7 +141,7 @@ margin-bottom:15px;
 
 
             $oldcontent = file_get_contents($file);
-            $newcontent = str_replace(array($old,$old.'/'),array($new,$new.'/'),$oldcontent);
+            $newcontent = str_replace([$old, $old.'/'],[$new, $new.'/'],$oldcontent);
 
             
     
@@ -149,12 +149,30 @@ margin-bottom:15px;
     
      
              
-    } 
+    };
+
+    $folder = GSDATAOTHERPATH.'oneBlock/**/*.{txt,json}';
+    foreach(glob($folder,GLOB_BRACE) as $file){
+
+      $old = str_replace(" ","",$_POST['old']);
+      $new = str_replace(" ","",$_POST['new']);
+
+
+        $oldcontent = file_get_contents($file);
+        $newcontent = str_replace([$old, $old.'/'],[$new, $new.'/'],$oldcontent);
+
+        
+
+        file_put_contents($file,$newcontent);
+
+ 
+         
+};
     
-    }
+    };
 
     
-  } 
+  } ;
 
  
 ?>
